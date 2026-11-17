@@ -917,7 +917,7 @@ class Worker(Thread):
       # so <b>I</b><b>saac<\b> displayed as "I saac" in calibre becomes
       # <b>Isaac<\b> displayed as "Isaac" in calibre
 
-        x=[b"</b><b>",b"</i><i>",b"</em><em>",b"</strong><strong>",b"</u><u>",b"<br/>"]
+        x=[b"</b><b>",b"</i><i>",b"</em><em>",b"</strong><strong>",b"</u><u>"]
         for i in range(len(x)):
             vol_comment_soup=BS(vol_comment_soup.encode("utf-8").replace(x[i],b""),"html5lib")
         # if debug: self.log.info(self.who,"vol_comment_soup\n",vol_comment_soup.prettify())                             # a bit long I guess
@@ -1034,7 +1034,7 @@ class Worker(Thread):
       # Side note:
       # This produce no very good URL structure (I once got html 3 times and div as a sibling of html...), but calibre does not seems to care (nice :-) )
       #
-        vol_comment_soup = str(vol_comment_soup.encode)         # serialize to string
+        vol_comment_soup = str(vol_comment_soup)         # serialize to string
 
         if debug:
             self.log.info("\n",self.who,"+++"*25)
