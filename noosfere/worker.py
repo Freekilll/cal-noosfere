@@ -1034,7 +1034,7 @@ class Worker(Thread):
       # Side note:
       # This produce no very good URL structure (I once got html 3 times and div as a sibling of html...), but calibre does not seems to care (nice :-) )
       #
-        vol_comment_soup = str(vol_comment_soup.encode)         # serialize to string
+        vol_comment_soup = str(vol_comment_soup)         # serialize to string
 
         if debug:
             self.log.info("\n",self.who,"+++"*25)
