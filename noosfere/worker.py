@@ -917,7 +917,7 @@ class Worker(Thread):
       # so <b>I</b><b>saac<\b> displayed as "I saac" in calibre becomes
       # <b>Isaac<\b> displayed as "Isaac" in calibre
 
-        x=[b"</b><b>",b"</i><i>",b"</em><em>",b"</strong><strong>",b"</u><u>"]
+        x=[b"</b><b>",b"</i><i>",b"</em><em>",b"</strong><strong>",b"</u><u>",b"<br/>"]
         for i in range(len(x)):
             vol_comment_soup=BS(vol_comment_soup.encode("utf-8").replace(x[i],b""),"html5lib")
         # if debug: self.log.info(self.who,"vol_comment_soup\n",vol_comment_soup.prettify())                             # a bit long I guess
